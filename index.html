@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link id="theme-set" rel="stylesheet" href="css/dark-theme.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/button_x.css">
+		<link rel="stylesheet" href="css/select.css">
+		<script src="scripts/save_scr.js"></script>
+		<script src="scripts/time.js"></script>
+		<script>
+		const savedPage = localStorage.getItem('selectedPage');
+		if (savedPage) {
+		switch (savedPage) {
+			case "test_page.html" :
+				localStorage.clear('theme');
+				window.location.href = "index.html";
+				break;
+			default :
+				window.location.href = `${savedPage}`;
+				break;
+		        }
+		}
+
+		</script>
+	</head>
+	<body>
+	<p class="up">Выбери группу</p>
+	<br></br>
+	<center><select id="mySelect" onchange="openPage()">
+		<option value="">Выбирай</option>
+		<option value="sis01.html">22-СИСА-01</option>
+	</select>
+	</center>
+	</body>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<footer>
+	<form action="https://t.me/lost_invoid" target="_blank">
+			<div class="box-1">
+				<button class='changer'>
+					<span>Написать админу напрямую</span>
+				</button>
+			</div>
+	</form>
+	</footer>
+</html>
