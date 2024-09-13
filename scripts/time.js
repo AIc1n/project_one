@@ -1,4 +1,4 @@
-var startDate = new Date('2024-09-02');
+var startDate = new Date('2024-08-26');
 var weekType
 // Задаем дату, для которой нужно проверить неделю
 var currentDate = new Date();
@@ -8,9 +8,9 @@ var diffInWeeks = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 100
 
 // Проверка, является ли неделя четной или нечетной
 if (diffInWeeks % 2 === 0) {
-  var weekType = 'первая';
-} else {
   var weekType = 'вторая';
+} else {
+  var weekType = 'первая';
 }
 // Вывод результата
 console.log('Текущая неделя: ' + diffInWeeks);
