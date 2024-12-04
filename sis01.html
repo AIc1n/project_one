@@ -68,14 +68,14 @@
 			<td id="name_obj_1_pn" class='name_obj_week' style="text-align: center;" colspan="3">л.Основы предпринимательства</td></tr><tr>
 			<td id="time_obj_1_pn" class='time_week'>8:00-9:30</td>
 			<td id="name_teach_1_pn" class='name_teach'>Афян С.Э.</td>
-			<td id="numb_class_1_pn" class='numb_class'>1-130</td></tr>
+			<td id="numb_class_1_pn" class='numb_class'>130</td></tr>
 			
 			<tr class='tr_obj_week'>
 			<td rowspan="2">2</td>
 			<td id="name_obj_2_pn" class='name_obj_week' style="text-align: center;" colspan="3">л.Организация администрирования компьютерных систем</td></tr><tr>
 			<td id="time_obj_2_pn" class='time_week'>9:40-11:10</td>
 			<td id="name_teach_2_pn" class='name_teach'>Джангирян М.Л.</td>
-			<td id="numb_class_2_pn" class='numb_class'>1-130</td></tr>
+			<td id="numb_class_2_pn" class='numb_class'>130</td></tr>
 			
 			<tr><td rowspan="2">3</td>
 			<td id="name_obj_3_pn" id='numb_week'class='name_obj_week' style="text-align: center;" colspan="3">пр.Физическая культура</td></tr><tr>
@@ -138,28 +138,22 @@
 		<tbody>
 			<tr class='tr_week_day'><td style="text-align: center;" colspan="4">Четверг</td></tr>
 			<tr><td rowspan="2">1</td>
-			<td id="name_obj_1_ch" class='name_obj_week' style="text-align: center;" colspan="3">пр.Основы предпринимательства</td></tr><tr>
-			<td id="time_obj_1_ch" class='time_week'>8:00-9:30</td>
-			<td id="name_teach_1_ch" class='name_teach'>Афян С.Э.</td>
-			<td id="numb_class_1_ch" class='numb_class'>309</td></tr>
+			<td id="name_obj_1_ch" class='name_obj_week' style="text-align: center;" colspan="3">л.Администрирование сетевых операционных систем</td></tr><tr>
+			<td id="time_obj_1_ch" class='time_week'>9:40-11:10</td>
+			<td id="name_teach_1_ch" class='name_teach'>Джангирян М.Л.</td>
+			<td id="numb_class_1_ch" class='numb_class'>130</td></tr>
 			
-			<tr class='tr_obj_week'><td rowspan="2">2</td>
-			<td id="name_obj_2_ch" class='name_obj_week' style="text-align: center;" colspan="3">л.Администрирование сетевых операционных систем</td></tr><tr>
-			<td id="time_obj_2_ch" class='time_week'>9:40-11:10</td>
-			<td id="name_teach_2_ch" class='name_teach'>Джангирян М.Л.</td>
-			<td id="numb_class_2_ch" class='numb_class'>130</td></tr>
+			<tr><td rowspan="2">2</td>
+			<td id="name_obj_2_ch" class='name_obj_week' style="text-align: center;" colspan="3">л.Организация, принципы построения и функционирования компьютерных сетей</td></tr><tr>
+			<td id="time_obj_2_ch" class='time_week'>11:30-13:00</td>
+			<td id="name_teach_2_ch" class='name_teach'>Ксенофондова Л.Э.</td>
+			<td id="numb_class_2_ch" class='numb_class'>202</td></tr>
 			
 			<tr><td rowspan="2">3</td>
 			<td id="name_obj_3_ch" class='name_obj_week' style="text-align: center;" colspan="3">л.Организация, принципы построения и функционирования компьютерных сетей</td></tr><tr>
-			<td id="time_obj_3_ch" class='time_week'>11:30-13:00</td>
+			<td id="time_obj_3_ch" class='time_week'>13:00-14:40</td>
 			<td id="name_teach_3_ch" class='name_teach'>Ксенофондова Л.Э.</td>
-			<td id="numb_class_3_ch" class='numb_class'>202</td></tr>
-			
-			<tr><td rowspan="2">4</td>
-			<td id="name_obj_4_ch" class='name_obj_week' style="text-align: center;" colspan="3">л.Организация, принципы построения и функционирования компьютерных сетей</td></tr><tr>
-			<td id="time_obj_4_ch" class='time_week'>11:30-13:00</td>
-			<td id="name_teach_4_ch" class='name_teach'>Ксенофондова Л.Э.</td>
-			<td id="numb_class_4_ch" class='numb_class'>309</td></tr>
+			<td id="numb_class_3_ch" class='numb_class'>309</td></tr>
 		</tbody>
 	</table>
 	</div>
@@ -178,6 +172,13 @@
 			<td id="time_obj_2_pt" class='time_week'>9:40-11:10</td>
 			<td id="name_teach_2_pt" class='name_teach'>Ксенофондова Л.Э.</td>
 			<td id="numb_class_2_pt" class='numb_class'>301</td></tr>
+			
+			<tr class='tr_obj_week'><td rowspan="2">3</td>
+			<td id="name_obj_3_pt" class='name_obj_week' style="text-align: center;" colspan="3">Пр.Основы предпринимательства</td></tr><tr>
+			<td id="time_obj_3_pt" class='time_week'>11:30-13:00</td>
+			<td id="name_teach_3_pt" class='name_teach'>Афян С.Э.</td>
+			<td id="numb_class_3_pt" class='numb_class'>105</td></tr>
+			
 		</tbody>
 	</table>
 	</div>
@@ -250,7 +251,10 @@
 			var hiddenDiv_su = document.getElementById("week_subota");
 			hiddenDiv_su.style.display = "block";
 		break;
-		default:
+		default: 
+			if (weekType == 'вторая'){
+				var weekType == 'первая';
+			}
 		break;
 	}
 
@@ -258,8 +262,9 @@
 		document.getElementById('name_obj_1_pn').innerHTML = 'л.Организация администрирования компьютерных систем'
 		document.getElementById('name_teach_1_pn').innerHTML = 'Джангирян М.Л.'
 		document.getElementById('name_obj_2_sr').innerHTML = 'пр.Администрирование сетевых операционных систем'
-		document.getElementById('name_obj_4_ch').innerHTML = 'л.Основы алгоритмизации и программирования'
-		document.getElementById('name_teach_4_ch').innerHTML = 'Заводина Л.Н.'
+		document.getElementById('name_obj_3_ch').innerHTML = 'л.Основы алгоритмизации и программирования'
+		document.getElementById('name_teach_3_ch').innerHTML = 'Заводина Л.Н.'
+		document.getElementById('name_class_3_pt').nnerHTML = '104'
 		document.getElementById('name_obj_1_su').innerHTML = 'пр.Организация, принципы построения и функционирования компьютерных сетей'
 		document.getElementById('name_teach_1_su').innerHTML = 'Ксенофондова Л.Э.'
 		
@@ -269,8 +274,9 @@
 		document.getElementById('name_obj_1_pn').innerHTML = 'л.Основы предпринимательства'
 		document.getElementById('name_teach_1_pn').innerHTML = 'Афян С.Э.'
 		document.getElementById('name_obj_2_sr').innerHTML = 'пр.Организация администрирования компьютерных систем'
-		document.getElementById('name_obj_4_ch').innerHTML = 'л.Организация, принципы построения и функционирования компьютерных сетей'
-		document.getElementById('name_teach_4_ch').innerHTML = 'Ксенофондова Л.Э.'
+		document.getElementById('name_obj_3_ch').innerHTML = 'л.Организация, принципы построения и функционирования компьютерных сетей'
+		document.getElementById('name_teach_3_ch').innerHTML = 'Ксенофондова Л.Э.'
+		document.getElementById('name_class_3_pt').nnerHTML = '105'
 		document.getElementById('name_obj_1_su').innerHTML = 'пр.Основы алгоритмизации и программирования'
 		document.getElementById('name_teach_1_su').innerHTML = 'Заводина Л.Н.'
 	}
