@@ -254,7 +254,6 @@
 		default:
 		break;
 	}
-
 	if (weekType == 'вторая') {
 		document.getElementById('name_obj_1_pn').innerHTML = 'л.Организация администрирования компьютерных систем'
 		document.getElementById('name_teach_1_pn').innerHTML = 'Джангирян М.Л.'
@@ -264,10 +263,7 @@
 		document.getElementById('name_class_3_pt').nnerHTML = '104'
 		document.getElementById('name_obj_1_su').innerHTML = 'пр.Организация, принципы построения и функционирования компьютерных сетей'
 		document.getElementById('name_teach_1_su').innerHTML = 'Ксенофондова Л.Э.'
-		
-		
 	} else {
-		
 		document.getElementById('name_obj_1_pn').innerHTML = 'л.Основы предпринимательства'
 		document.getElementById('name_teach_1_pn').innerHTML = 'Афян С.Э.'
 		document.getElementById('name_obj_2_sr').innerHTML = 'пр.Организация администрирования компьютерных систем'
@@ -281,7 +277,6 @@
 	document.getElementById('weekType').innerHTML = weekType;
 	
 	function view_all() {
-
 			var hiddenDiv_pn = document.getElementById("week_monday");
 			hiddenDiv_pn.style.display = "block";
 			var hiddenDiv_vt= document.getElementById("week_vtornik");
@@ -304,35 +299,13 @@
 	}
 	function clear_data_accept() {
 	document.getElementById("accept_modal").style.display = "block";
-	}
-	function clear_data() {
-		localStorage.clear();
-		localStorage.theme = 'css/dark-theme.css';
-		check_localStorage()
-		
-	}
+
 	function openModal() {
 		document.getElementById("myModal").style.display = "block";
 	}
 	function closeModal() {
 		document.getElementById("myModal").style.display = "none";
 	}
-	const themes = ['css/dark-theme.css', 'css/light-theme.css'];
-	let currentThemeIndex = 0;
-
-	function changeTheme() {
-	switch (localStorage.theme) {
-		case ('css/dark-theme.css') :
-			document.getElementById('theme-set').href = "css/light-theme.css";
-			localStorage.theme =  "css/light-theme.css";
-		break;
-		case ('css/light-theme.css') :
-			document.getElementById('theme-set').href = "css/dark-theme.css";
-			localStorage.theme =  "css/dark-theme.css";
-		break;
-		}
-	}
 	</script>
-	<script src="scripts/theme.js"></script>
 	</body>
 </html>
