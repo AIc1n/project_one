@@ -7,6 +7,8 @@ var diffInWeeks = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 100
 
 if (diffInWeeks % 2 === 0) {
   var weekType = 'вторая';
+  return weekType;
 } else {
   var weekType = 'первая';
+  return weekType;
 }
