@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/button_x.css">
 		<script src="scripts/save_scr.js"></script>
+		<script src="scripts/time.js"></script>
 	</head>
 	<body bgcolor='#ffffff'>
 	<div class="box-1">
@@ -57,8 +58,7 @@
 		</div>
 	</div>
 	</div>
-	<h1 id='weektypedisplay'>Сейчас неделя</h1>
-	<input type="checkbox" name="weektype_button1" id="weektype_button">
+	<h1 id='weektype'>Сейчас неделя</h1>
 	
 	
 	<div id="week_monday" style="display: none;">
@@ -213,37 +213,6 @@
 		<button id='view_all_changer' class='changer' onclick='view_all()' style="display: block;"><span>Увидеть все расписание</span></button>
 	</div>
 	<script>
-	var startDate = new Date('2024-08-26');
-        var weekType;
-        var currentDate = new Date();
-        	
-        // Функция для вычисления типа недели
-        function calculateWeekType() {
-        	var diffInWeeks = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
-        	
-        	if (diffInWeeks % 2 === 0) {
-        		weekType = 'вторая';
-        	} else {
-        		weekType = 'первая';
-        	}
-        }
-        	
-        calculateWeekType();
-        
-        // Отображение текущего типа недели
-        document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
-        	
-        // Обработчик события для чекбокса
-        document.getElementById('weektype_button').addEventListener('change', function() {
-        	if (this.checked) {
-        		// Если чекбокс отмечен, фиксируем на "первая"
-        		weekType = 'первая';
-        	} else {
-        		// Если чекбокс снят, возвращаем исходное значение
-        		calculateWeekType();
-        	}
-        	document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
-        });
 		var days = ['week_vosk', 'week_monday', 'week_vtornik', 'week_sreda', 'week_chetverg', 'week_pyatnica', 'week_subota'];
 		var d = new Date();
 		var dayOfWeek = days[d.getDay()];
@@ -287,7 +256,7 @@
 		break;
 	}
 
-	if (weektypedisplay == 'вторая') {
+	if (weektype == 'вторая') {
 		document.getElementById('name_obj_1_ch').innerHTML = 'Физра'
 		document.getElementById('name_class_1_ch').innerHTML = 'зал'
 		document.getElementById('name_obj_2_ch').innerHTML = 'л.Организация администрирования компьютерных систем'
@@ -309,7 +278,7 @@
 		document.getElementById('name_class_2_su').innerHTML = 'зал'
 	}
 
-	document.getElementById('weektypedisplay').innerHTML = weektypedisplay;
+	document.getElementById('weektype').innerHTML = weektype;
 	
 	function view_all() {
 
