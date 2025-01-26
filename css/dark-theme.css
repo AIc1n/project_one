@@ -55,26 +55,22 @@ button.changer {
 }
 button.setting {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  justify-content: flex-end;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   outline: 0;
   font: inherit;
-  width: 1.5em;
-  height: 1.5em;
-  background: url('../img/img_lol/set_icon_white.png');
+  width: 50px;
+  height: 50px;
+  background: url('../img/img_lol/set_icon_white.png') no-repeat center center;
   background-size: cover;
   border-radius: 0.25em;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   color: #ffffff;
-  position: absolute;
-  top: 10px; /* Задайте нужный вам верхний отступ */
-  right: 10px; /* Задайте нужный вам правый отступ */
-  width: 50px; /* Задайте ширину для квадратной кнопки */
-  height: 50px; /* Задайте высоту для квадратной кнопки */
-  border: none;
+  position: fixed;
+  top: 10px; 
+  right: 10px; 
 }
 button.back {
   -webkit-appearance: none;
@@ -92,28 +88,29 @@ button.back {
   cursor: pointer;
   color: #ffffff;
   position: absolute;
-  top: 10px; /* Задайте нужный вам верхний отступ */
-  left: 10px; /* Задайте нужный вам правый отступ */
-  width: 50px; /* Задайте ширину для квадратной кнопки */
-  height: 50px; /* Задайте высоту для квадратной кнопки */
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
   border: none;
 }
 
 .modal {
-    display: none; /* скрыть модальное окно по умолчанию */
-    position: fixed; /* фиксированная позиция */
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5); /* полупрозрачный фон */
+	z-index: 10;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* центрирование */
+    transform: translate(-50%, -50%);
     background-color: #000000;
     padding: 20px;
     border: 1px solid #888;

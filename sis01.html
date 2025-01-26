@@ -19,21 +19,6 @@
 		<div class="modal-content">
 			<span class="close" onclick="closeModal()">&times;</span>
 			<p>Типа настройки</p>
-			<br />
-			<div class="box-2">
-				<button class='changer' onclick='clear_data_accept()' style="color: #ff0000">
-					<span>Выбрать другую группу</span>
-				</button>
-			</div>
-			<br />
-			<form action="https://t.me/lost_invoid" target="_blank">
-			<div class="box-1">
-				<button class='changer'>
-					<span>Написать админу</span>
-				</button>
-			</div>
-			</form>
-			<br />
 			<div class="box-1">
 				<button class='changer' onclick='check_localStorage()'>
 					<span>Уйти на главную</span>
@@ -41,22 +26,6 @@
 			</div>
 			<h1>А дальше настроек нету, все</h1>
 		</div>
-	</div>
-	<div id="accept_modal" class="modal">
-		<div class="modal-content">
-		<p>Вы точно хотите отменить выбор и сбросить группу?</p>
-		<div class="box-1">
-			<button class='changer' onclick='close_view_all()'>
-			<span>Нет</span>
-			</button>
-		</div>
-		<br />
-		<div class="box-2">
-			<button class='changer' onclick='clear_data()' style="color: #ff0000">
-			<span>Да</span>
-			</button>
-		</div>
-	</div>
 	</div>
 	<h1 id='weektypedisplay'>Сейчас неделя</h1>
 	<label id='toggle' class="checkbox-google" style="display: none">
@@ -107,7 +76,7 @@
 			<td id="name_class_2_vt" class='name_class'>1-120</td></tr>
 			
 			<tr><td rowspan="2">3</td>
-			<td id="name_obj_3_vt" class='name_obj_week' style="text-align: center;" colspan="3">пр.Программное обеспечение компьютерных сетейtd></tr><tr>
+			<td id="name_obj_3_vt" class='name_obj_week' style="text-align: center;" colspan="3">пр.Программное обеспечение компьютерных сетей</tr><tr>
 			<td id="time_obj_3_vt" class='time_week'>16:30-18:00</td>
 			<td id="name_teach_3_vt" class='name_teach'>Карташов К.В.</td>
 			<td id="name_class_3_vt" class='name_class'>1-208</td></tr>
@@ -259,12 +228,9 @@
     calculateWeekType();
     document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
 
-    // Обработчик события для чекбокса
     document.getElementById('weektype_button').addEventListener('change', function() {
-        // Меняем на противоположное значение
         weekType = (weekType === 'первая') ? 'вторая' : 'первая';
 
-        // Обновляем отображение
         document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
 		updateSchedule();
 		});
@@ -340,9 +306,6 @@
 	
 	function close_view_all() {
 		window.location.reload();
-	}
-	function clear_data_accept() {
-	document.getElementById("accept_modal").style.display = "block";
 	}
 
 	function openModal() {
