@@ -4,9 +4,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link id="theme-set" rel="stylesheet" href="css/dark-theme.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/toggle.css">
 		<link rel="stylesheet" href="css/button_x.css">
 		<script src="scripts/save_scr.js"></script>
-		<script src="scripts/time.js"></script>
 	</head>
 	<body bgcolor='#ffffff'>
 	<div class="box-1">
@@ -58,7 +58,11 @@
 		</div>
 	</div>
 	</div>
-	<h1 id='weektype'>Сейчас неделя</h1>
+	<h1 id='weektypedisplay'>Сейчас неделя</h1>
+	<label id='toggle' class="checkbox-google" style="display: none">
+	<input type="checkbox" name="weektype_button1" id="weektype_button">
+	<span id='toggle_switch' class="checkbox-google-switch" style="display: none"></span>
+	</label>
 	
 	
 	<div id="week_monday" style="display: none;">
@@ -213,6 +217,58 @@
 		<button id='view_all_changer' class='changer' onclick='view_all()' style="display: block;"><span>Увидеть все расписание</span></button>
 	</div>
 	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    var startDate = new Date('2025-01-20');
+    var weekType;
+    var currentDate = new Date();
+    
+    function calculateWeekType() {
+        var diffInWeeks = Math.floor((currentDate - startDate) / (7 * 24 * 60 * 60 * 1000));
+        
+        if (diffInWeeks % 2 === 0) {
+            weekType = 'вторая';
+        } else {
+            weekType = 'первая';
+        }
+    }
+    function updateSchedule() {
+		if (weekType == 'вторая') {
+			document.getElementById('name_obj_1_ch').innerHTML = 'Физра'
+			document.getElementById('name_class_1_ch').innerHTML = 'зал'
+			document.getElementById('name_obj_2_ch').innerHTML = 'л.Организация администрирования компьютерных систем'
+			document.getElementById('name_obj_3_ch').innerHTML = 'пр.Организация администрирования компьютерных систем'
+			document.getElementById('name_class_3_ch').innerHTML = '1-208'
+			document.getElementById('name_obj_2_su').innerHTML = 'пр.Программное обеспечение компьютерных сетей'
+			document.getElementById('name_teach_2_su').innerHTML = 'Карташов К.В.'
+			document.getElementById('name_class_2_su').innerHTML = '1-125'
+		}
+			
+			
+		else if (weekType == 'первая') {
+			document.getElementById('name_obj_1_ch').innerHTML = ''
+			document.getElementById('name_class_1_ch').innerHTML = ''
+			document.getElementById('name_obj_2_ch').innerHTML = 'л.Администрирование сетевых операционных систем'
+			document.getElementById('name_obj_3_ch').innerHTML = 'пр.Администрирование сетевых операционных систем'
+			document.getElementById('name_class_3_ch').innerHTML = '1-120'
+			document.getElementById('name_obj_2_su').innerHTML = 'Физра'
+			document.getElementById('name_teach_2_su').innerHTML = ''
+			document.getElementById('name_class_2_su').innerHTML = 'зал'
+		}
+	}
+	updateSchedule();
+    calculateWeekType();
+    document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
+
+    // Обработчик события для чекбокса
+    document.getElementById('weektype_button').addEventListener('change', function() {
+        // Меняем на противоположное значение
+        weekType = (weekType === 'первая') ? 'вторая' : 'первая';
+
+        // Обновляем отображение
+        document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
+		updateSchedule();
+		});
+	});
 		var days = ['week_vosk', 'week_monday', 'week_vtornik', 'week_sreda', 'week_chetverg', 'week_pyatnica', 'week_subota'];
 		var d = new Date();
 		var dayOfWeek = days[d.getDay()];
@@ -255,30 +311,7 @@
 		default:
 		break;
 	}
-
-	if (weektype == 'вторая') {
-		document.getElementById('name_obj_1_ch').innerHTML = 'Физра'
-		document.getElementById('name_class_1_ch').innerHTML = 'зал'
-		document.getElementById('name_obj_2_ch').innerHTML = 'л.Организация администрирования компьютерных систем'
-		document.getElementById('name_obj_3_ch').innerHTML = 'пр.Организация администрирования компьютерных систем'
-		document.getElementById('name_class_3_ch').innerHTML = '1-208'
-		document.getElementById('name_obj_2_su').innerHTML = 'пр.Программное обеспечение компьютерных сетей'
-		document.getElementById('name_teach_2_su').innerHTML = 'Карташов К.В.'
-		document.getElementById('name_class_2_su').innerHTML = '1-125'
-		
-		
-	} else {
-	    document.getElementById('name_obj_1_ch').innerHTML = ''
-		document.getElementById('name_class_1_ch').innerHTML = ''
-		document.getElementById('name_obj_2_ch').innerHTML = 'л.Администрирование сетевых операционных систем'
-		document.getElementById('name_obj_3_ch').innerHTML = 'пр.Администрирование сетевых операционных систем'
-		document.getElementById('name_class_3_ch').innerHTML = '1-120'
-		document.getElementById('name_obj_2_su').innerHTML = 'Физра'
-		document.getElementById('name_teach_2_su').innerHTML = ''
-		document.getElementById('name_class_2_su').innerHTML = 'зал'
-	}
-
-	document.getElementById('weektype').innerHTML = weektype;
+    
 	
 	function view_all() {
 
@@ -298,7 +331,13 @@
 			button_view_all.style.display = "none";
 			var back_view_all = document.getElementById("back_view");
 			back_view_all.style.display = "block";
+			var checkbox_google1 = document.getElementById("toggle");
+			checkbox_google1.style.display = "block";
+			var checkbox_google2 = document.getElementById("toggle_switch");
+			checkbox_google2.style.display = "block";
+			
 	}
+	
 	function close_view_all() {
 		window.location.reload();
 	}
