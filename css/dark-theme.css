@@ -10,12 +10,33 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: top;
+  filter: hue-rotate(300deg);
 	font-family: 'VCR OSD Mono RUS+VHS icons', sans-serif;
 	font-size: 28px;
 	line-height: 1.0;
 	text-align: center;
 	color: #ffffff;
 }
+.background-inversion {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  filter: hue-rotate(300deg);
+}
+
+.background-inversion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  filter: invert(1);
+  z-index: 0;
+}
+
 select {
 	color: white;
 }

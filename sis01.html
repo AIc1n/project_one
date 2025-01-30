@@ -187,7 +187,7 @@
 	</div>
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
-    var startDate = new Date('2025-01-20');
+    var startDate = new Date('2025-01-27');
     var weekType;
     var currentDate = new Date();
     
@@ -200,114 +200,77 @@
             weekType = 'первая';
         }
     }
+
     function updateSchedule() {
-		if (weekType == 'вторая') {
-			document.getElementById('name_obj_1_ch').innerHTML = 'Физра'
-			document.getElementById('name_class_1_ch').innerHTML = 'зал'
-			document.getElementById('name_obj_2_ch').innerHTML = 'л.Организация администрирования компьютерных систем'
-			document.getElementById('name_obj_3_ch').innerHTML = 'пр.Организация администрирования компьютерных систем'
-			document.getElementById('name_class_3_ch').innerHTML = '1-208'
-			document.getElementById('name_obj_2_su').innerHTML = 'пр.Программное обеспечение компьютерных сетей'
-			document.getElementById('name_teach_2_su').innerHTML = 'Карташов К.В.'
-			document.getElementById('name_class_2_su').innerHTML = '1-125'
-		}
-			
-			
-		else if (weekType == 'первая') {
-			document.getElementById('name_obj_1_ch').innerHTML = 'нету'
-			document.getElementById('name_class_1_ch').innerHTML = ''
-			document.getElementById('name_obj_2_ch').innerHTML = 'л.Администрирование сетевых операционных систем'
-			document.getElementById('name_obj_3_ch').innerHTML = 'пр.Администрирование сетевых операционных систем'
-			document.getElementById('name_class_3_ch').innerHTML = '1-120'
-			document.getElementById('name_obj_2_su').innerHTML = 'Физра'
-			document.getElementById('name_teach_2_su').innerHTML = ''
-			document.getElementById('name_class_2_su').innerHTML = 'зал'
-		}
-	}
-	updateSchedule();
+        if (weekType === 'вторая') {
+            document.getElementById('name_obj_1_ch').innerHTML = 'Физра';
+            document.getElementById('name_class_1_ch').innerHTML = 'зал';
+            document.getElementById('name_obj_2_ch').innerHTML = 'л.Организация администрирования компьютерных систем';
+            document.getElementById('name_obj_3_ch').innerHTML = 'пр.Организация администрирования компьютерных систем';
+            document.getElementById('name_class_3_ch').innerHTML = '1-208';
+            document.getElementById('name_obj_2_su').innerHTML = 'пр.Программное обеспечение компьютерных сетей';
+            document.getElementById('name_teach_2_su').innerHTML = 'Карташов К.В.';
+            document.getElementById('name_class_2_su').innerHTML = '1-125';
+        } else if (weekType === 'первая') {
+            document.getElementById('name_obj_1_ch').innerHTML = 'нету';
+            document.getElementById('name_class_1_ch').innerHTML = '';
+            document.getElementById('name_obj_2_ch').innerHTML = 'л.Администрирование сетевых операционных систем';
+            document.getElementById('name_obj_3_ch').innerHTML = 'пр.Администрирование сетевых операционных систем';
+            document.getElementById('name_class_3_ch').innerHTML = '1-120';
+            document.getElementById('name_obj_2_su').innerHTML = 'Физра';
+            document.getElementById('name_teach_2_su').innerHTML = '';
+            document.getElementById('name_class_2_su').innerHTML = 'зал';
+        }
+    }
+
     calculateWeekType();
+    updateSchedule();
+    
     document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
 
     document.getElementById('weektype_button').addEventListener('change', function() {
         weekType = (weekType === 'первая') ? 'вторая' : 'первая';
 
         document.getElementById('weektypedisplay').innerText = 'Текущий тип недели: ' + weekType;
-		updateSchedule();
-		});
-	});
-		var days = ['week_vosk', 'week_monday', 'week_vtornik', 'week_sreda', 'week_chetverg', 'week_pyatnica', 'week_subota'];
-		var d = new Date();
-		var dayOfWeek = days[d.getDay()];
-		console.log(dayOfWeek)
-		switch (dayOfWeek){
-		case 'week_monday':
-			var hiddenDiv_pn = document.getElementById("week_monday");
-			hiddenDiv_pn.style.display = "block";
-			var hiddenDiv_vt= document.getElementById("week_vtornik");
-			hiddenDiv_vt.style.display = "block";
-		break;
-		case 'week_vtornik':
-			var hiddenDiv_vt = document.getElementById("week_vtornik");
-			hiddenDiv_vt.style.display = "block";
-			var hiddenDiv_sr = document.getElementById("week_sreda");
-			hiddenDiv_sr.style.display = "block";
-		break;
-		case 'week_sreda':
-			var hiddenDiv_sr = document.getElementById("week_sreda");
-			hiddenDiv_sr.style.display = "block";
-			var hiddenDiv_ch = document.getElementById("week_chetverg");
-			hiddenDiv_ch.style.display = "block";
-		break;
-		case 'week_chetverg':
-			var hiddenDiv_ch = document.getElementById("week_chetverg");
-			hiddenDiv_ch.style.display = "block";
-			var hiddenDiv_pt = document.getElementById("week_pyatnica");
-			hiddenDiv_pt.style.display = "block";
-		break;
-		case 'week_pyatnica':
-			var hiddenDiv_pt = document.getElementById("week_pyatnica");
-			hiddenDiv_pt.style.display = "block";
-			var hiddenDiv_su = document.getElementById("week_subota");
-			hiddenDiv_su.style.display = "block";
-		break;
-		case 'week_subota':
-			var hiddenDiv_su = document.getElementById("week_subota");
-			hiddenDiv_su.style.display = "block";
-		break;
-		default:
-		break;
-	}
-    
-	
-	function view_all() {
+        updateSchedule();
+    });
+});
 
-			var hiddenDiv_pn = document.getElementById("week_monday");
-			hiddenDiv_pn.style.display = "block";
-			var hiddenDiv_vt= document.getElementById("week_vtornik");
-			hiddenDiv_vt.style.display = "block";
-			var hiddenDiv_sr = document.getElementById("week_sreda");
-			hiddenDiv_sr.style.display = "block";
-			var hiddenDiv_ch = document.getElementById("week_chetverg");
-			hiddenDiv_ch.style.display = "block";
-			var hiddenDiv_pt = document.getElementById("week_pyatnica");
-			hiddenDiv_pt.style.display = "block";
-			var hiddenDiv_su = document.getElementById("week_subota");
-			hiddenDiv_su.style.display = "block";
-			var button_view_all = document.getElementById("view_all_changer");
-			button_view_all.style.display = "none";
-			var back_view_all = document.getElementById("back_view");
-			back_view_all.style.display = "block";
-			var checkbox_google1 = document.getElementById("toggle");
-			checkbox_google1.style.display = "block";
-			var checkbox_google2 = document.getElementById("toggle_switch");
-			checkbox_google2.style.display = "block";
-			
-	}
+var days = ['week_vosk', 'week_monday', 'week_vtornik', 'week_sreda', 'week_chetverg', 'week_pyatnica', 'week_subota'];
+var d = new Date();
+var dayIndex = d.getDay();
+for (var i = dayIndex; i <= Math.min(dayIndex + 1, 6); i++) {
+    var hiddenDiv = document.getElementById(days[i]);
+    if (hiddenDiv) {
+        hiddenDiv.style.display = "block";
+    }
+}
+
+function view_all() {
+    var idsToShow = [
+        "week_monday",
+        "week_vtornik",
+        "week_sreda",
+        "week_chetverg",
+        "week_pyatnica",
+        "week_subota",
+        "view_all_changer",
+        "back_view",
+        "toggle",
+        "toggle_switch"
+    ];
+
+    idsToShow.forEach(function(id) {
+        var element = document.getElementById(id);
+        if (element) {
+            element.style.display = (id === "view_all_changer") ? "none" : "block";
+        }
+    });
+	}	
 	
 	function close_view_all() {
 		window.location.reload();
 	}
-
 	function openModal() {
 		document.getElementById("myModal").style.display = "block";
 	}
@@ -316,4 +279,7 @@
 	}
 	</script>
 	</body>
+	<footer>
+		<p>ver. 1.1(2025)</p>
+	</footer>
 </html>

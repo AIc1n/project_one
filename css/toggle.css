@@ -1,7 +1,7 @@
 .checkbox-google { 
 	height: 60px;    
-	line-height: 28px;      
-	margin-right: 10px;       
+	line-height: 100%;      
+	margin-right: 5px;       
 	position: relative;
 	vertical-align: middle;
 	font-size: 14px;
@@ -9,7 +9,7 @@
 }
 .checkbox-google .checkbox-google-switch {
 	display: inline-block;	
-	width: 72px;
+	width: 100%;
 	height: 40px;	
 	border-radius: 20px;
 	position: relative;
@@ -42,6 +42,6 @@
 }
 .checkbox-google input[type=checkbox]:checked + .checkbox-google-switch:before {
 	background: #8c8c8c;
-	transform:translateX(30px);
+	transform: translateX(84vw);
 }
 
